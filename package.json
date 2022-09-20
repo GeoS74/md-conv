@@ -5,9 +5,13 @@
   "main": "./lib/Converter",
   "types": "./types/Converter.d.ts",
   "files": [
-    "lib",
+    "./lib/*.js",
     "./types/*.d.ts"
   ],
+  "directories": {
+    "lib": "lib",
+    "types": "types"
+  },
   "scripts": {
     "test": "jest --config jest.config.js",
     "build": "tsc",
