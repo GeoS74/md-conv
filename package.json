@@ -1,8 +1,7 @@
 {
   "name": "md-conv",
-  "version": "0.0.12",
+  "version": "0.0.13",
   "description": "markdown converter",
-
   "scripts": {
     "test": "jest --config jest.config.js",
     "build": "tsc",
