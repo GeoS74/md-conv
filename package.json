@@ -1,6 +1,6 @@
 {
   "name": "md-conv",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "markdown converter",
   "main": "lib/Converter.js",
   "scripts": {
