@@ -29,9 +29,9 @@ export class Converter implements IConverter {
 
   private prefix = '';
 
-  constructor(opts?: {prefix: string}) {
-    if(opts?.prefix) {
-      this.setPrefix(opts.prefix)
+  constructor(opts?: { prefix: string }) {
+    if (opts?.prefix) {
+      this.setPrefix(opts.prefix);
     }
   }
 
