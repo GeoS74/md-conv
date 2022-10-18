@@ -27,6 +27,8 @@ export class Converter implements IConverter {
     close?: string,
   } = {};
 
+  private prefix = '';
+
   markdownToHTML(markdown: string): string {
     this.codeBlock = false;
     this.setTag();
@@ -37,6 +39,13 @@ export class Converter implements IConverter {
       .split(this.regexp.code)
       .map((block: string, i: number): string => ((i % 2) ? this.code(block) : block))
       .join('\n') + (this.tag.close || '');
+  }
+
+  setPrefix(prefix: string): void {
+    if (prefix === '/') {
+      return;
+    }
+    this.prefix = prefix[0] === '/' ? prefix : `/${prefix}`;
   }
 
   private setTag(tag?: string, start?: number): void {
@@ -262,7 +271,7 @@ export class Converter implements IConverter {
       const url: string = link[0].trim();
       const alias: string = link.length > 1 ? link.slice(1).join('|').trim() : url;
 
-      line = line.replace(chunk[2], `<a href="/${url}">${alias}</a>`);
+      line = line.replace(chunk[2], `<a href="${this.prefix}/${url}">${alias}</a>`);
     }
     return line;
   }
