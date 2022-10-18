@@ -1,6 +1,6 @@
 {
   "name": "md-conv",
-  "version": "0.0.27",
+  "version": "0.0.28",
   "description": "markdown converter",
   "main": "./lib/Converter",
   "types": "./types/Converter",
