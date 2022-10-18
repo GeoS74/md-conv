@@ -29,6 +29,12 @@ export class Converter implements IConverter {
 
   private prefix = '';
 
+  constructor(opts?: {prefix: string}) {
+    if(opts?.prefix) {
+      this.setPrefix(opts.prefix)
+    }
+  }
+
   markdownToHTML(markdown: string): string {
     this.codeBlock = false;
     this.setTag();
@@ -41,7 +47,7 @@ export class Converter implements IConverter {
       .join('\n') + (this.tag.close || '');
   }
 
-  setPrefix(prefix: string): void {
+  private setPrefix(prefix: string): void {
     if (prefix === '/') {
       return;
     }

@@ -18,7 +18,10 @@ test('image test', () => {
 
 test('internalLink test', () => {
   expect(converter.markdownToHTML('[[test]]')).toBe('<p><a href="/test">test</a></p>');
-  converter.setPrefix('/api');
+});
+
+test('using prefix internalLink test', () => {
+  const converter = new Converter({ prefix: '/api' });
   expect(converter.markdownToHTML('[[test]]')).toBe('<p><a href="/api/test">test</a></p>');
 });
 
